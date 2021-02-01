@@ -71,7 +71,7 @@ REPLACE THIS TEXT WITH A LINK TO YOUR CARD WALL
     npm run test:integration  # integration tests only
     ```
 
-#### Start test server
+#### Start test server!
 
 The server must be running locally with test configuration for the
 integration tests to pass.
