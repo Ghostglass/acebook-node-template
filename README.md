@@ -52,7 +52,7 @@ REPLACE THIS TEXT WITH A LINK TO YOUR CARD WALL
 
 ### Start
 
-1. Start the server
+1. Start the server!
     ```
     npm start
     ```
