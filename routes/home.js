@@ -4,7 +4,7 @@ var router = express.Router(); // this allows us to set up HTTP routes
 var HomeController = require('../controllers/home');
 var SignUpController = require('../controllers/signup');
 var LoginController = require('../controllers/login');
-const { route } = require('./content');
+/*const { route } = require('./content');*/
 
 router.get('/', HomeController.Index);
 

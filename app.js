@@ -29,6 +29,7 @@ app.use('/', homeRouter);
 app.use('/content', contentRouter);
 
 // catch 404 and forward to error handler
+//GET /public/stylesheets/content.css 404 17.006 ms - 2397
 app.use(function(req, res, next) {
   next(createError(404));
 });

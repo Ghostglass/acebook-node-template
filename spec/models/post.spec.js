@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
-
-require('../mongodb_helper')
-var Post = require('../../models/post');
+  require('../mongodb_helper')
+  // eslint-disable-next-line node/no-missing-require
+  var Post = require('content/spec/models/post.spec.js');
 
 describe('Post model', function() {
   beforeEach(function(done) {
