@@ -27,4 +27,23 @@
     ],
     "rules": {
     }
+  
+  {
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    },
+  },
+  "env": {
+    "browser": true
+  },
+  "extends": ["airbnb", "prettier"],
+  "rules": {
+    "react/prop-types": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js"] }]
+  },
 }
+
