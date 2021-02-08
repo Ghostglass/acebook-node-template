@@ -21,7 +21,7 @@ router.post('/content', (req, res) => {
   })
 
   newUser.save((err, newUser) =>
-  {
+   {
     if (err) {
       res.send(err);
     }
