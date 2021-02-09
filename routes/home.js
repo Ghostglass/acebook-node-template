@@ -28,7 +28,7 @@ router.post('/content', (req, res) => {
     res.json(newUser)
     //res.redirect('/content')
   });
-  //res.send(req.body.username)
+  req.session.user = newUser
 });
 
 router.post('/login', (req, res) => {

@@ -8,19 +8,21 @@ var app = require('../app');
 var debug = require('debug')('acebook:server');
 var http = require('http');
 var mongoose = require('mongoose');
+const session = require('express-session'); // allows sessions to be created simply
+const MongoStore = require('connect-mongo')(session);
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '27017');
+var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
  * Connect to MongoDB
  **/
 
- var mongoDbUrl = process.env.MONGODB_URL || 'mongodb+srv://the_matrix:tEfOQLY8O65NSStX@cluster0.qbyke.mongodb.net/acebook?retryWrites=true&w=majority';
+ var mongoDbUrl = process.env.MONGODB_URL || 'mongodb+srv://elena:KBBPS5rvE1CfHBPC@cluster0.qbyke.mongodb.net/acebook?retryWrites=true&w=majority';
  mongoose.connect(mongoDbUrl, {
    useNewUrlParser: true,
    useUnifiedTopology: true
@@ -29,6 +31,13 @@ app.set('port', port);
  var db = mongoose.connection;
  db.on('error', console.error.bind(console, 'MongoDB connection error:'));
  db.once('open', () => console.log('We are now connected to mongoose!'));
+ 
+ const sessionStore = new MongoStore({
+   mongooseConnection: db,
+   collection: 'sessions'
+ })
+
+
 
 /**
  * Create HTTP server.

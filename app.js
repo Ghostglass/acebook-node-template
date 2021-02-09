@@ -4,6 +4,8 @@ const createError = require('http-errors'); // creates HTTP errors
 const cookieParser = require('cookie-parser'); // enables signed cookie support
 const logger = require('morgan');
 const bodyParser = require('body-parser');
+const session = require('express-session'); // allows sessions to be created simply
+
 
 // connect to express
 const app = express();
@@ -11,6 +13,9 @@ const app = express();
 // connect to the routes folder
 const homeRouter = require('./routes/home'); // gets the home page
 const contentRouter = require('./routes/content'); // gets the content page
+
+
+
 
 // setup view engine to use hbs in the views folder
 app.set('views', path.join(__dirname, 'views'));
@@ -26,6 +31,13 @@ app.use(express.static(path.join(__dirname, 'public'))); // tell express where o
 // tell express to use these route
 app.use('/', homeRouter);
 app.use('/content', contentRouter);
+
+ // setup sessions
+ app.use(session({
+  secret: 'secret-session',
+  saveUninitialized: true,
+  resave: false
+}));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
