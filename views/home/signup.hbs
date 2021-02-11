@@ -1,23 +1,45 @@
-<h1 class="title">{{title}}</h1>
-
-<h2>Sign Up!</h2>
-<form action="/content" method="post">
-  {{!-- <label for="firstname">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup</title>
+  </head>
+  <body>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet">
+    <!-- Icons -->
+    <link href="/assets/vendor/nucleo/css/nucleo-icons.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <!-- Theme CSS -->
+    <link type="text/css" href="/assets/css/blk-design-system.min.css" rel="stylesheet">
+    <h1 class="title">{{Welcome to Verse}}</h1>
+    <h2></h2>
+    <form action="/content" method="post">
+    {{!-- <label for="firstname">
     First Name
     <input type="text" name="firstname">
-  </label></br>
-  <label for="lastname"></label>
+    </label></br>
+    <label for="lastname"></label>
     Last Name
     <input type="text" name="lastname">
-  </label></br> --}}
-  <label for="username"></label>
+    </label></br> --}}
+    <label for="username"></label>
     Username
     <input type="text" name="username" value="{{{ user.username }}}">
-  </label></br>
-  <label for="password"></label>
+    </label></br>
+    <label for="password"></label>
     Password
     <input type="text" name="password" value="{{{ user.password }}}">
-  </label></br>
-  <input type="submit" value="Submit">
-</form>
+    </label></br>
+    <input type="submit" value="Submit">
+    </form>
+    <!-- Core -->
+    <script src="/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="/assets/vendor/popper/popper.min.js"></script>
+    <script src="/assets/vendor/bootstrap/bootstrap.min.js"></script>
+    <!-- Theme JS -->
+    <script src="/assets/js/blk-design-system.min.js"></script>
+    </body>
 <p>Created by The Matrix.</p>
+</html>

@@ -1,4 +1,5 @@
 const express = require('express'); // require express
+const hbs = require('hbs');
 const path = require('path'); // provides the utility to with files and directory paths
 const createError = require('http-errors'); // creates HTTP errors
 const cookieParser = require('cookie-parser'); // enables signed cookie support
@@ -16,6 +17,7 @@ const contentRouter = require('./routes/content'); // gets the content page
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+//app.use("/", routes);
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
